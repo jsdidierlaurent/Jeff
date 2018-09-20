@@ -36,6 +36,8 @@ program
 .option('-I, --ignoreImages <boolean>',                 'Not to export images', 'false')
 .option('-F, --filtering <filtering method>',           'Filtering that should be used when rendering the animation', 'linear')
 .option('-e, --outlineEmphasis <coefficient>',          'Emphasis of outlines when rendering Flash vectorial drawings', '1')
+.option('-f, --ignoreList <boolean/array of classes>',  'To ignore specified classes', 'false')
+.option('-F, --fallbackFrameRate <number>',             'FrameRate used if the frame rate is not confirgured in graphic properties', '15')
 
 .parse(process.argv);
 
@@ -49,6 +51,8 @@ var exportParams = {
 	scope:              program.scope,
 	ratio:              JSON.parse(program.ratio),
 	renderFrames:       JSON.parse(program.renderFrames),
+	ignoreList:					JSON.parse(program.ignoreList),
+	fallbackFrameRate:  JSON.parse(program.fallbackFrameRate),
 
 	// Optimisation options
 	imageOptim:         JSON.parse(program.imageOptim),
@@ -67,7 +71,7 @@ var exportParams = {
 	ignoreData:         JSON.parse(program.ignoreData),
 	ignoreImages:       JSON.parse(program.ignoreImages),
 	filtering:          program.filtering,
-	outlineEmphasis:    JSON.parse(program.outlineEmphasis)
+	outlineEmphasis:    JSON.parse(program.outlineEmphasis),
 };
 
 // Creating a new Jeff

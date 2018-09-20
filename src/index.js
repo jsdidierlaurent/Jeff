@@ -84,6 +84,8 @@ function JeffOptions(params) {
 	this.minificationFilter  = params.minificationFilter  || 'linear';
 	this.magnificationFilter = params.magnificationFilter || 'linear';
 	this.outlineEmphasis     = params.outlineEmphasis     || 1;
+	this.ignoreList          = params.ignoreList          || false;
+	this.fallbackFrameRate   = params.fallbackFrameRate   || 25;
 
 	// Advanced++ options
 	// Not usable as command line options
@@ -97,14 +99,12 @@ function JeffOptions(params) {
 	this.classRatios         = params.classRatios;
 	this.container           = params.container;
 	this.ignoreExpression    = params.ignoreExpression;
-	this.ignoreList          = params.ignoreList;
 	this.removeList          = params.removeList;
 	this.exclusiveList       = params.exclusiveList;
 	this.postProcess         = params.postProcess;
 	this.customWriteFile     = params.customWriteFile;
 	this.customReadFile      = params.customReadFile;
 	this.fixedSize           = params.fixedSize;
-	this.fallbackFrameRate   = params.fallbackFrameRate   || 25;
 	// 1: minimal log level, 10: maximum log level. TODO: needs to be implemented on every console.warn/log/error
 	this.verbosity           = params.verbosity           || 3;
 
