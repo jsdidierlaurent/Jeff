@@ -24,6 +24,11 @@ function generateMetaData(symbols, symbolList, graphicProperties) {
 				symbolData.scalingGrid = symbol.scalingGrid;
 			}
 
+			if(symbol.labels)
+			{
+				symbolData.labels = JSON.parse(JSON.stringify(symbol.labels));
+			}
+
 			toExport = true;
 		}
 
